@@ -1,0 +1,2 @@
+schema Restaurant extends Thing {
+}

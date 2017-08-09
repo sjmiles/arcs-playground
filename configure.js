@@ -9,40 +9,27 @@
  */
 
 window.urls = {
+  "assets/restaurants": "assets/restaurants",
+  "../entities/Restaurant": "entities/Restaurant",
+  "../particles/CreateRestaurants": "http://localhost/projects/arcs/arcs-playground/particles/CreateRestaurants",
+  "../particles/ShowRestaurants": "http://localhost/projects/arcs/arcs-playground/particles/ShowRestaurants"
 };
 
 window.db = {
   entities: [
-    'Product'
+    'Restaurant'
   ],
   views: {
-    //'whocares?': 'Product',
   },
   model: {
-    Product: [
+    Restaurant: [
       {
-        name: "Minecraft Book",
-        category: "Books",
-        seller: "denile.com",
-        price: "$14.50",
-        shipDays: 7,
-        image: "assets/products/book.png"
+        name: "McDonald's",
+        image: 'assets/restaurants/mcdonalds.png'
       },
       {
-        name: "Power Tool Set",
-        category: "Tools",
-        seller: "denile.com",
-        price: "$59.00",
-        shipDays: 42,
-        image: "assets/products/powertool.png"
-      },
-      {
-        name: "Guardian of the Galaxy Figure",
-        category: "Toys & Collectibles",
-        seller: "denile.com",
-        price: "$75.00",
-        shipDays: 14,
-        image: "assets/products/galaxy.png"
+        name: "Arby's",
+        image: 'assets/restaurants/mcdonalds.png'
       }
     ]
   }
@@ -51,7 +38,7 @@ window.db = {
 window.recipes = [
 {
   particles: [{
-    name: "Create",
+    name: "CreateRestaurants",
     constrain: {
       "newList": "list"
     }
@@ -61,7 +48,7 @@ window.recipes = [
       "list": "list"
     }
   },{
-    name: "ShowProducts",
+    name: "ShowRestaurants",
     constrain: {
       "list": "list"
     }
