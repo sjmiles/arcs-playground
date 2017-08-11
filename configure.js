@@ -10,8 +10,8 @@
 
 window.urls = {
   "../entities/Account": "entities/Account",
-  "../particles/CreateAccounts": "http://localhost/arcs-playground/particles/CreateAccounts",
-  "../particles/ShowAccounts": "http://localhost/arcs-playground/particles/ShowAccounts"
+  "../particles/CreateAccounts": "particles/CreateAccounts",
+  "../particles/ShowAccounts": "particles/ShowAccounts"
 };
 
 window.db = {
