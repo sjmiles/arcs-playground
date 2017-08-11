@@ -15,7 +15,7 @@ defineParticle(({DomParticle}) => {
   Found <span>{{count}}</span> item(s).
   <x-list items="{{items}}">
     <template>
-      <div>
+      <div style="padding: 6px; border-bottom: 1px dotted silver;">
         <span>{{name}}</span>: <span>{{balance}}</span>
       </div>
     </template>
