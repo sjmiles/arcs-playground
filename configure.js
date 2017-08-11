@@ -10,7 +10,6 @@
 
 window.urls = {
   "../entities/Account": "entities/Account",
-  "../particles/CreateAccounts": "https://sjmiles.github.io/arcs-playground/particles/CreateAccounts",
   "../particles/ShowAccounts": "https://sjmiles.github.io/arcs-playground/particles/ShowAccounts"
 };
 
@@ -36,18 +35,7 @@ window.db = {
 
 window.recipes = [
 {
-  //name: "Create shortlist with [product, ...]",
   particles: [{
-    name: "CreateAccounts",
-    constrain: {
-      "newList": "list"
-    }
-  },{
-    name: "SaveList",
-    constrain: {
-      "list": "list"
-    }
-  },{
     name: "ShowAccounts",
     constrain: {
       "list": "list"
