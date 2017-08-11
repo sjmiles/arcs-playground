@@ -1,0 +1,2 @@
+schema Selection extends Thing {
+}

@@ -8,10 +8,10 @@
  * http://polymer.github.io/PATENTS.txt
  */
 
-ShowRestaurants(in [Restaurant] list, in [Selection] selection)
+RestaurantMasterDetail(in [Restaurant] list)
 
-renders: show none-need
+renders: root none-need
 
 Description {
-  pattern: Show ${list}
+  pattern: Show and explore ${list}
 }

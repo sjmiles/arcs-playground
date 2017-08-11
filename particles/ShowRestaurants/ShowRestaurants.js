@@ -13,8 +13,7 @@ var host = `[show-restaurants]`;
 //var productStyles = '';
 //importScripts('../../../particles/shared/product-templates.js');
 
-defineParticle(({DomParticle, resolver}) => {
-
+defineParticle(({ DomParticle, resolver }) => {
   let styles = `
 <style>
   ${host} {
@@ -53,13 +52,6 @@ defineParticle(({DomParticle, resolver}) => {
     overflow: hidden;
     line-height: 115%;
   }
-  ${host} > x-list [col0] > * {
-    /*
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    */
-  }
   ${host} > x-list [col1] {
     display: flex;
     align-items: center;
@@ -93,7 +85,7 @@ defineParticle(({DomParticle, resolver}) => {
 
   let productTemplate = `
 <template>
-  <div item>
+  <div item key="{{index}}" on-click="_onSelectItem">
     <div row>
       <div col0>
         <div name title="{{name}}">{{name}}</div>
@@ -118,9 +110,11 @@ ${productStyles}
     <span>Your shortlist</span>
   </div>
 
-  <div slotid="preamble"></div>
+  <!--<div slotid="preamble"></div>-->
 
   <x-list items="{{items}}">${productTemplate}</x-list>
+
+  <!--
   <interleaved-list>
     <div slotid="annotation"></div>
   </interleaved-list>
@@ -130,10 +124,10 @@ ${productStyles}
   <interleaved-list>
     <div slotid="annotation3"></div>
   </interleaved-list>
-
   <div slotid="action"></div>
-
   <div slotid="postamble"></div>
+  -->
+
 </div>
     `.trim();
 
@@ -144,9 +138,10 @@ ${productStyles}
     _willReceiveProps(props) {
       this._setState({
         // TODO(sjmiles): rawData provides POJO access, but shortcuts schema-enforcing getters
-        items: props.list.map(({rawData}, i) => {
-          let item = Object.assign({}, rawData);
-          item.itemSlotId = `item-${i}`;
+        items: props.list.map((restaurant, i) => {
+          let item = Object.assign({}, restaurant.rawData);
+          item.index = i;
+          //item.itemSlotId = `item-${i}`;
           item.image = resolver && resolver(item.image);
           return item;
         })
@@ -160,6 +155,14 @@ ${productStyles}
         items: state.items
       };
     }
+    _onSelectItem(e) {
+      console.log(e.data.key, this._props.selection);
+      let selection = this._views.get("selection");
+      if (selection) {
+        selection.toList().then(items => {
+          Object.assign(items[0], this._props.list[e.data.key].rawData);
+        });
+      }
+    }
   };
-
 });

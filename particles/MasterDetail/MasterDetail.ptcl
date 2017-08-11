@@ -8,4 +8,7 @@
  * http://polymer.github.io/PATENTS.txt
  */
 
-transient CreateRestaurants(create [Restaurant] newList)
+MasterDetail(in [Restaurant] list)
+
+renders: root none-need
+exposes: show

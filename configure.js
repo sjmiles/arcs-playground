@@ -10,26 +10,40 @@
 
 window.urls = {
   "assets/restaurants": "assets/restaurants",
+  //
   "../entities/Restaurant": "entities/Restaurant",
-  "../particles/CreateRestaurants": "http://localhost/projects/arcs/arcs-playground/particles/CreateRestaurants",
-  "../particles/ShowRestaurants": "http://localhost/projects/arcs/arcs-playground/particles/ShowRestaurants"
+  "../entities/Selection": "entities/Selection",
+  //
+  "../particles/MasterDetail": "particles/MasterDetail",
+  "../particles/ShowRestaurants": "particles/ShowRestaurants"
 };
 
 window.db = {
   entities: [
-    'Restaurant'
+    'Restaurant',
+    'Selection'
   ],
   views: {
+    //'selection': 'Selection'
   },
   model: {
+    Selection: [
+      {
+        name: ""
+      }
+    ],
     Restaurant: [
       {
-        name: "McDonald's",
-        image: 'assets/restaurants/mcdonalds.png'
+        name: "McDonuts",
+        image: 'assets/restaurants/fastfood.jpg'
       },
       {
-        name: "Arby's",
-        image: 'assets/restaurants/mcdonalds.png'
+        name: "Barby's",
+        image: 'assets/restaurants/fastfood.jpg'
+      },
+      {
+        name: "Burger Fling",
+        image: 'assets/restaurants/fastfood.jpg'
       }
     ]
   }
@@ -38,19 +52,15 @@ window.db = {
 window.recipes = [
 {
   particles: [{
-    name: "CreateRestaurants",
-    constrain: {
-      "newList": "list"
-    }
-  },{
-    name: "SaveList",
+    name: "MasterDetail",
     constrain: {
       "list": "list"
     }
   },{
     name: "ShowRestaurants",
     constrain: {
-      "list": "list"
+      "list": "list",
+      "selection": "selection"
     }
   }]
 }
