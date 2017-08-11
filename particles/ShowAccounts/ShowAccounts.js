@@ -12,7 +12,8 @@ defineParticle(({DomParticle}) => {
 
   let template = `
 <div show-products>
-  Found <span>{{count}}</span> item(s).
+  <div style="padding: 6px;">Found <span>{{count}}</span> item(s).</div>
+  <hr>
   <x-list items="{{items}}">
     <template>
       <div style="padding: 6px; border-bottom: 1px dotted silver;">
