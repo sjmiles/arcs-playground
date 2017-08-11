@@ -1,0 +1,4 @@
+schema Account extends Thing {
+  normative:
+    Text balance;
+}

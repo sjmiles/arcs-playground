@@ -9,48 +9,26 @@
  */
 
 window.urls = {
+  "../entities/Account": "entities/Account",
+  "../particles/CreateAccounts": "http://localhost/arcs-playground/particles/CreateAccounts",
+  "../particles/ShowAccounts": "http://localhost/arcs-playground/particles/ShowAccounts"
 };
 
 window.db = {
   entities: [
-    'Person',
-    'Product'
+    'Account'
   ],
   views: {
-    'peopleFromWebpage': 'Person',
-    'productsFromWebpage': 'Product',
-    'personSlot': 'Person'
   },
   model: {
-    Person: [
+    Account: [
       {
-        name: "Claire"
-      }
-    ],
-    Product: [
-      {
-        name: "Minecraft Book",
-        category: "Books",
-        seller: "denile.com",
-        price: "$14.50",
-        shipDays: 7,
-        image: "assets/products/book.png"
+        name: "Fred's Bank",
+        balance: "20.30"
       },
       {
-        name: "Power Tool Set",
-        category: "Tools",
-        seller: "denile.com",
-        price: "$59.00",
-        shipDays: 42,
-        image: "assets/products/powertool.png"
-      },
-      {
-        name: "Guardian of the Galaxy Figure",
-        category: "Toys & Collectibles",
-        seller: "denile.com",
-        price: "$75.00",
-        shipDays: 14,
-        image: "assets/products/galaxy.png"
+        name: "Savings and Koan",
+        balance: "9876.54"
       }
     ]
   }
@@ -58,9 +36,9 @@ window.db = {
 
 window.recipes = [
 {
-  name: "Create shortlist with [product, ...]",
+  //name: "Create shortlist with [product, ...]",
   particles: [{
-    name: "Create",
+    name: "CreateAccounts",
     constrain: {
       "newList": "list"
     }
@@ -70,126 +48,10 @@ window.recipes = [
       "list": "list"
     }
   },{
-    name: "ShowProducts",
+    name: "ShowAccounts",
     constrain: {
       "list": "list"
     }
   }]
-}, 
-
-{
-  name: "See [person]'s wishlist",
-  particles: [{
-    name: "WishlistFor",
-    constrain: {
-      "wishlist": "wishlist",
-      "person": "person"
-    }
-  },{
-    name: "Choose",
-    constrain: {
-      "singleton": "person"
-    }
-  },{
-    name: "ShowProducts",
-    constrain: {
-      "list": "wishlist"
-    }
-  }]
-},
-
-{
-  name: "Create shortlist with [product, ...] and suggest similar products from [person]'s wish list",
-  particles: [{
-    name: "Create",
-    constrain: {
-      "newList": "list"
-    }
-  },{
-    name: "Create",
-    constrain: {
-      "newList": "recommended"
-    }
-  },{
-    name: "WishlistFor",
-    constrain: {
-      "wishlist": "wishlist",
-      "person": "person"
-    }
-  },{
-    name: "Recommend",
-    constrain: {
-      "known": "list",
-      "population": "wishlist",
-      "recommendations": "recommended"
-    }
-  },{
-    name: "SaveList",
-    constrain: {
-      "list": "list"
-    }
-  },{
-    name: "Choose",
-    constrain: {
-      "singleton": "person"
-    }
-  },{
-    name: "ShowProducts",
-    constrain: {
-      "list": "list"
-    }
-  },{
-    name: "Chooser",
-    constrain: {
-      "choices": "recommended",
-      "resultList": "list"
-    }
-  }, {
-    name: "AlsoOn",
-    constrain: {
-      "list": "list",
-      "choices": "wishlist"
-    }
-  }]
-}, 
-
-{
-  name: "Buying for [person]'s [occasion] in [timeframe]? Product [X] arrives too late.",
-  particles: [{
-    name: "GiftList",
-    constrain: {
-      "person": "person"
-    }
-  }, {
-    name: "Arrivinator",
-    constrain: {
-      "list": "list"
-    }
-  }]
-}, 
-
-{
-  name: "Check manufacturer information for products.",
-  particles: [{
-    name: "ManufacturerInfo",
-    constrain: {
-      "list": "list"
-    }
-  }]
-}, 
-
-{
-  name: "Recommendations based on Claire's interest in field hockey.",
-  particles: [{
-    name: "Interests",
-    constrain: {
-      "list": "wishlist"
-    }
-  }]
-}, 
-
-{
-  name: "Profit",
-  particles: []
 }
 ];
