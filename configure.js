@@ -10,8 +10,8 @@
 
 window.urls = {
   "../entities/Account": "entities/Account",
-  "../particles/CreateAccounts": "particles/CreateAccounts",
-  "../particles/ShowAccounts": "particles/ShowAccounts"
+  "../particles/CreateAccounts": "./particles/CreateAccounts",
+  "../particles/ShowAccounts": "./particles/ShowAccounts"
 };
 
 window.db = {
