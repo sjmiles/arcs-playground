@@ -18,6 +18,7 @@ window.db = {
     'Account'
   ],
   views: {
+    'accounts': 'Account'
   },
   model: {
     Account: [
