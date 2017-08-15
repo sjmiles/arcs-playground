@@ -6,17 +6,9 @@
 # subject to an additional IP rights grant found at
 # http://polymer.github.io/PATENTS.txt
 
-particle ShowProducts in 'ShowProducts.js'
-  ShowProducts(in [Product] list)
+import '../../entities/Restaurant.manifest'
+
+particle ShowRestaurants in 'ShowRestaurants.js'
+  ShowRestaurants(in [Restaurant] list)
   consume root
-    provide action
-      view list
-    provide preamble
-    provide annotation
-      view list
-    provide annotation2
-      view list
-    provide annotation3
-      view list
-    provide postamble
   description `Show ${list}`
