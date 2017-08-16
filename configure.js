@@ -13,8 +13,9 @@ window.urls = {
 };
 
 window.db = {
-  model: {
-    Restaurant: [
+  views: [{
+    type: 'Restaurant',
+    model: [
       {
         name: "McDonuts",
         image: 'assets/restaurants/fastfood.jpg'
@@ -28,5 +29,5 @@ window.db = {
         image: 'assets/restaurants/fastfood.jpg'
       }
     ]
-  }
+  }]
 };
