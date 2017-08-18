@@ -8,35 +8,15 @@
 
 "use strict";
 
-var host = `[master-detail]`;
-
-defineParticle(({DomParticle, resolver}) => {
-
-  let styles = `
-<style>
-  ${host} [head] {
-    padding: 8px;
-  }
-</style>
-  `;
+defineParticle(({DomParticle/*, resolver*/}) => {
 
   let template = `
-${styles}
-<div master-detail>
-  <div head>
-    <span>Yo, Master & Detail</span>
-  </div>
-  <div slotid="show" on-click="_onClick"></div>
-  <div slotid="detail">Details</div>
-</div>
+<div master-detail>Foo</div>
     `.trim();
 
   return class extends DomParticle {
     get template() {
       return template;
-    }
-    _onClick(e, state) {
-      console.log(e);
     }
   };
 

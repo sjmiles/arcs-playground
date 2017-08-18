@@ -113,6 +113,8 @@ ${productStyles}
   <!--<div slotid="preamble"></div>-->
 
   <x-list items="{{items}}">${productTemplate}</x-list>
+  
+  <div slotid="foo"></div>
 
   <!--
   <interleaved-list>

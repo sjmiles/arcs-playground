@@ -8,10 +8,8 @@
 
 import '../../entities/Restaurant.manifest'
 
-particle ShowRestaurants in 'ShowRestaurants.js'
-  ShowRestaurants(in [Restaurant] list)
-  consume root
-    provide foo
-      view list
+particle Info in 'Info.js'
+  Info(in [Restaurant] list)
+  consume foo
 
-  description `Show ${list}`
+  description `Fooify ${list}`

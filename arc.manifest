@@ -6,6 +6,10 @@
 # http://polymer.github.io/PATENTS.txt
 
 import 'particles/ShowRestaurants/ShowRestaurants.manifest'
+import 'particles/Info/Info.manifest'
 
 recipe
   ShowRestaurants
+
+recipe
+  Info
